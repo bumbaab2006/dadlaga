@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/new.css" />
+    <title>calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="rowwindow" id="screen"></div>
+      <div class="row" id="buttons"></div>
+    </div>
+    <script>
+      let screen = "";
+      const screenEl = document.getElementById("screen");
+
+      function updateScreen() {
+        screenEl.textContent = screen;
+      }
+      const buttons = [
+        { text: "AC", action: () => (screen = ""), cls: "topbutton" },
+        {
+          text: "<",
+          action: () => (screen = screen.slice(0, -1)),
+          cls: "topbutton",
+        },
+        { text: "%", action: () => (screen += "%"), cls: "topbutton" },
+        { text: "/", action: () => (screen += "/"), cls: "rightbutton" },
+
+        { text: "7", action: () => (screen += "7"), cls: "button" },
+        { text: "8", action: () => (screen += "8"), cls: "button" },
+        { text: "9", action: () => (screen += "9"), cls: "button" },
+        { text: "x", action: () => (screen += "*"), cls: "rightbutton" },
+
+        { text: "4", action: () => (screen += "4"), cls: "button" },
+        { text: "5", action: () => (screen += "5"), cls: "button" },
+        { text: "6", action: () => (screen += "6"), cls: "button" },
+        { text: "-", action: () => (screen += "-"), cls: "rightbutton" },
+
+        { text: "1", action: () => (screen += "1"), cls: "button" },
+        { text: "2", action: () => (screen += "2"), cls: "button" },
+        { text: "3", action: () => (screen += "3"), cls: "button" },
+        { text: "+", action: () => (screen += "+"), cls: "rightbutton" },
+
+        { text: "0", action: () => (screen += "0"), cls: "button" },
+        { text: "00", action: () => (screen += "00"), cls: "button" },
+        { text: ".", action: () => (screen += "."), cls: "button" },
+        {
+          text: "=",
+          action: () => {
+            try {
+              screen = eval(screen);
+            } catch {
+              screen = "Error";
+            }
+          },
+          cls: "rightbutton",
+        },
+      ];
+      const rowEl = document.getElementById("buttons");
+      buttons.forEach((btn) => {
+        const button = document.createElement("button");
+        button.textContent = btn.text;
+        button.className = btn.cls;
+        button.addEventListener("click", () => {
+          btn.action();
+          updateScreen();
+        });
+        rowEl.appendChild(button);
+      });
+    </script>
+  </body>
+</html>

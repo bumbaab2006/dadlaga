@@ -1,0 +1,69 @@
+.container {
+  background-color: black;
+  padding: 15px;
+  position: absolute;
+  border: solid rgb(0, 0, 0);
+  border-radius: 20px;
+  margin: 50px 450px;
+  align-items: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.row {
+  margin: 8px 0;
+}
+.rightbutton {
+  width: 70px;
+  height: 70px;
+  padding: 5px;
+  margin: 0 4px;
+  border: none;
+  background-color: #ee9406;
+  color: white;
+  font-weight: bolder;
+  font-size: 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.button {
+  width: 70px;
+  height: 70px;
+  padding: 5px;
+  margin: 0 4px;
+  border: none;
+  background-color: #2f2f2f;
+  color: white;
+  font-weight: bolder;
+  font-size: 30px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.topbutton {
+  width: 70px;
+  height: 70px;
+  padding: 5px;
+  margin: 0 4px;
+  border: none;
+  background-color: #9a9a9a;
+  color: black;
+  font-weight: bolder;
+  font-size: 30px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.rowwindow {
+  width: 285px;
+  height: 50px;
+  font-size: 200%;
+  font-weight: bolder;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  margin: 0;
+  padding: 10px 10px;
+  border: none;
+  text-align: right;
+  border: 2px solid black;
+}

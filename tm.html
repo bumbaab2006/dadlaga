@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/tm.css" />
+    <title>calculator</title>
+  </head>
+  <body>
+    <script>
+      let screen = "";
+
+      const container = document.createElement("div");
+      const rowwindow = document.createElement("div");
+      const row1 = document.createElement("div");
+      const row2 = document.createElement("div");
+      const row3 = document.createElement("div");
+      const row4 = document.createElement("div");
+      const row5 = document.createElement("div");
+      const ACbutton = document.createElement("button");
+      const backbutton = document.createElement("button");
+      const uldegdelhuvaahbutton = document.createElement("button");
+      const huvaahbutton = document.createElement("button");
+      const urjihbutton = document.createElement("button");
+      const nemehbutton = document.createElement("button");
+      const hasahbutton = document.createElement("button");
+      const tentsuubutton = document.createElement("button");
+      const tsegbutton = document.createElement("button");
+      const teg2button = document.createElement("button");
+      const tegbutton = document.createElement("button");
+      const neg = document.createElement("button");
+      const hoyr = document.createElement("button");
+      const gurav = document.createElement("button");
+      const duruv = document.createElement("button");
+      const tav = document.createElement("button");
+      const zurgaa = document.createElement("button");
+      const doloo = document.createElement("button");
+      const naim = document.createElement("button");
+      const yus = document.createElement("button");
+
+      container.classList.add("container");
+      huvaahbutton.classList.add("rightbutton");
+      urjihbutton.classList.add("rightbutton");
+      hasahbutton.classList.add("rightbutton");
+      nemehbutton.classList.add("rightbutton");
+      tentsuubutton.classList.add("rightbutton");
+      ACbutton.classList.add("topbutton");
+      backbutton.classList.add("topbutton");
+      uldegdelhuvaahbutton.classList.add("topbutton");
+      tsegbutton.classList.add("button");
+      teg2button.classList.add("button");
+      tegbutton.classList.add("button");
+      neg.classList.add("button");
+      hoyr.classList.add("button");
+      gurav.classList.add("button");
+      duruv.classList.add("button");
+      tav.classList.add("button");
+      zurgaa.classList.add("button");
+      doloo.classList.add("button");
+      naim.classList.add("button");
+      yus.classList.add("button");
+      row1.classList.add("row");
+      row2.classList.add("row");
+      row3.classList.add("row");
+      row4.classList.add("row");
+      row5.classList.add("row");
+      rowwindow.classList.add("rowwindow");
+      container.appendChild(rowwindow);
+      rowwindow.innerHTML = screen;
+      container.appendChild(row1);
+      container.appendChild(row2);
+      container.appendChild(row3);
+      container.appendChild(row4);
+      container.appendChild(row5);
+      row1.appendChild(ACbutton);
+      row1.appendChild(backbutton);
+      row1.appendChild(uldegdelhuvaahbutton);
+      row1.appendChild(huvaahbutton);
+      row2.appendChild(doloo);
+      row2.appendChild(naim);
+      row2.appendChild(yus);
+      row2.appendChild(urjihbutton);
+      row3.appendChild(duruv);
+      row3.appendChild(tav);
+      row3.appendChild(zurgaa);
+      row3.appendChild(hasahbutton);
+      row4.appendChild(neg);
+      row4.appendChild(hoyr);
+      row4.appendChild(gurav);
+      row4.appendChild(nemehbutton);
+      row5.appendChild(tegbutton);
+      row5.appendChild(teg2button);
+      row5.appendChild(tsegbutton);
+      row5.appendChild(tentsuubutton);
+      ACbutton.innerHTML = "AC";
+      backbutton.innerHTML = "<";
+      uldegdelhuvaahbutton.innerHTML = "%";
+      huvaahbutton.innerHTML = "/";
+      urjihbutton.innerHTML = "x  ";
+      nemehbutton.innerHTML = "+";
+      hasahbutton.innerHTML = "-";
+      tentsuubutton.innerHTML = "=";
+      tsegbutton.innerHTML = ".";
+      teg2button.innerHTML = "00";
+      tegbutton.innerHTML = "0";
+      neg.innerHTML = "1";
+      hoyr.innerHTML = "2";
+      gurav.innerHTML = "3";
+      duruv.innerHTML = "4";
+      tav.innerHTML = "5";
+      zurgaa.innerHTML = "6";
+      doloo.innerHTML = "7";
+      naim.innerHTML = "8";
+      yus.innerHTML = "9";
+      document.body.appendChild(container);
+      function updateScreen() {
+        rowwindow.innerHTML = screen;
+      }
+      tentsuubutton.addEventListener("click", function () {
+        try {
+          screen = eval(screen);
+        } catch (e) {
+          screen = "Error";
+        }
+        updateScreen();
+      });
+      ACbutton.addEventListener("click", function () {
+        screen = "";
+        updateScreen();
+      });
+      backbutton.addEventListener("click", function () {
+        screen = screen.slice(0, -1);
+        updateScreen();
+      });
+      uldegdelhuvaahbutton.addEventListener("click", function () {
+        screen += "%";
+        updateScreen();
+      });
+      huvaahbutton.addEventListener("click", function () {
+        screen += "/";
+        updateScreen();
+      });
+      urjihbutton.addEventListener("click", function () {
+        screen += "*";
+        updateScreen();
+      });
+      nemehbutton.addEventListener("click", function () {
+        screen += "+";
+        updateScreen();
+      });
+      hasahbutton.addEventListener("click", function () {
+        screen += "-";
+        updateScreen();
+      });
+
+      tsegbutton.addEventListener("click", function () {
+        screen += ".";
+        updateScreen();
+      });
+      teg2button.addEventListener("click", function () {
+        screen += "00";
+        updateScreen();
+      });
+      tegbutton.addEventListener("click", function () {
+        screen += "0";
+        updateScreen();
+      });
+      neg.addEventListener("click", function () {
+        screen += "1";
+        updateScreen();
+      });
+      hoyr.addEventListener("click", function () {
+        screen += "2";
+        updateScreen();
+      });
+      gurav.addEventListener("click", function () {
+        screen += "3";
+        updateScreen();
+      });
+      duruv.addEventListener("click", function () {
+        screen += "4";
+        updateScreen();
+      });
+      tav.addEventListener("click", function () {
+        screen += "5";
+        updateScreen();
+      });
+      zurgaa.addEventListener("click", function () {
+        screen += "6";
+        updateScreen();
+      });
+      doloo.addEventListener("click", function () {
+        screen += "7";
+        updateScreen();
+      });
+      naim.addEventListener("click", function () {
+        screen += "8";
+        updateScreen();
+      });
+      yus.addEventListener("click", function () {
+        screen += "9";
+        updateScreen();
+      });
+    </script>
+  </body>
+</html>

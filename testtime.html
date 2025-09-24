@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stopwatch.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const container = document.createElement("div");
+      const timeDisplay = document.createElement("div");
+      const startStopButton = document.createElement("button");
+      const resetButton = document.createElement("button");
+      let myinterval;
+      container.classList.add("container");
+      timeDisplay.classList.add("time-display");
+      startStopButton.classList.add("button");
+      resetButton.classList.add("button");
+      container.appendChild(timeDisplay);
+      container.appendChild(startStopButton);
+      container.appendChild(resetButton);
+      document.body.appendChild(container);
+      timeDisplay.textContent = "0:0:0:0";
+      startStopButton.textContent = "Start";
+      resetButton.textContent = "Reset";
+      function startStop() {
+        if (startStopButton.textContent === "Start") {
+          startStopButton.textContent = "Stop";
+          myinterval = setInterval(myTimer, 10);
+        } else if (startStopButton.textContent === "Resume") {
+          startStopButton.textContent = "Stop";
+          myinterval = setInterval(myTimer, 10);
+        } else {
+          startStopButton.textContent = "Resume";
+          clearInterval(myinterval);
+        }
+      }
+      startStopButton.addEventListener("click", startStop);
+      resetButton.addEventListener("click", () => {
+        s = 0;
+        m = 0;
+        h = 0;
+        timeDisplay.textContent = "0:0:0:0";
+        startStopButton.textContent = "Start";
+        clearInterval(myinterval);
+      });
+      let s = 0;
+      let m = 0;
+      let h = 0;
+      let d = 0;
+      function myTimer() {
+        d++;
+        if (d == 100) {
+          d = 0;
+          s++;
+        }
+        if (s == 60) {
+          s = 0;
+          m++;
+        }
+        if (m == 60) {
+          m = 0;
+          h++;
+        }
+        if (h == 24) {
+          h = 0;
+        }
+        timeDisplay.textContent = `${String(h)}:${String(m)}:${String(
+          s
+        )}:${String(d)}`;
+      }
+    </script>
+  </body>
+</html>

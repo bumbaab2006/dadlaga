@@ -1,0 +1,37 @@
+.button {
+  height: 100px;
+  width: 200px;
+  background-color: #2f2f2f;
+  color: white;
+  font-weight: bolder;
+  font-size: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  margin: 10px;
+  border: none;
+  transition: all 0.3s;
+  background-position: none;
+}
+.container {
+  height: 240px;
+  width: 441px;
+  background-color: black;
+  padding: 15px;
+  border: solid rgb(0, 0, 0);
+  border-radius: 20px;
+  margin: 50px 50px;
+  align-items: center;
+  align-items: center;
+  flex-direction: column;
+}
+.time-display {
+  height: 100px;
+  font-size: 300%;
+  font-weight: bolder;
+  color: white;
+  background-color: #2f2f2f;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 100px;
+  margin-bottom: 20px;
+}
