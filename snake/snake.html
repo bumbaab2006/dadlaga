@@ -3,11 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./snake.css" />
     <title>Document</title>
+    <style>
+      canvas {
+        border: 1px solid #d3d3d3;
+        background-color: #f1f1f1;
+      }
+    </style>
   </head>
+  <!-- <body onload="startGame()"> -->
   <body>
     <script>
-      let;
+      const board = [];
+      const max = 30;
+      for (let i = 0; i < max; i++) {
+        board[i] = [];
+        for (let j = 0; j < max; j++) {
+          board[i][j] = 0;
+        }
+      }
+      let score = 0;
+      let highestScore = 0;
+      let snake = [{ x: 10, y: 10 }];
+      let direction = { x: 0, y: 0 };
+      let food = {
+        x: Math.floor(Math.random() * max),
+        y: Math.floor(Math.random() * max),
+      };
+      let gameInterval;
+      // function startGame() {
+      //   document.addEventListener("keydown", changeDirection);
+      //   gameInterval = setInterval(updateGame, 100);
+      // }
+
+      // let myGameArea = {
+      //   canvas: document.createElement("canvas"),
+      //   start: function () {
+      //     this.canvas.width = 600;
+      //     this.canvas.height = 600;
+      //     this.context = this.canvas.getContext("2d");
+      //     document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+      //   },
+      // };
+
+      const container = document.createElement("div");
+      document.addEventListener("keydown", (e) => {
+        const key = e.key;
+        if (key === "ArrowUp" && direction.y !== 1) {
+          direction = { x: 0, y: -1 };
+        } else if (key === "ArrowDown" && direction.y !== -1) {
+          direction = { x: 0, y: 1 };
+        } else if (key === "ArrowLeft" && direction.x !== 1) {
+          direction = { x: -1, y: 0 };
+        } else if (key === "ArrowRight" && direction.x !== -1) {
+          direction = { x: 1, y: 0 };
+        }
+      });
+
+      const startButton = document.createElement("button");
+      const scoreDisplay = document.createElement("div");
+      const highestScoreDisplay = document.createElement("div");
+      container.classList.add("container");
+      startButton.classList.add("button");
+      scoreDisplay.classList.add("score-display");
+      highestScoreDisplay.classList.add("score-display");
+      container.appendChild(scoreDisplay);
+      container.appendChild(highestScoreDisplay);
+      container.appendChild(startButton);
+      document.body.appendChild(container);
+      // document.body.appendChild(myGameArea.canvas);
+      scoreDisplay.textContent = "Score: 0";
+      highestScoreDisplay.textContent = "Highest Score: 0";
+      startButton.textContent = "Start Game";
+      // startButton.addEventListener("click", startGame);
+
+      // function startGame() {
+      //   myGameArea.start();
+      // }
     </script>
   </body>
 </html>
